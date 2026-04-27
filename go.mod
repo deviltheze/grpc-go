@@ -35,3 +35,6 @@ require (
 //     (see rpc_util.go: defaultClientMaxRecvMsgSize = 1024 * 1024 * 16)
 //   - NOTE: also bumped defaultMaxRecvMsgSize on the server side to 16MB to
 //     keep client/server limits consistent during local load testing
+//   - TODO: look into whether grpc.WithKeepaliveParams on the client side needs
+//     to be tuned when sitting behind an AWS NLB (idle timeout is 350s by default;
+//     considering setting ClientParameters.Time to 300s to avoid silent drops)
