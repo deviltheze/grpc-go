@@ -26,3 +26,7 @@ require (
 
 // Personal fork for learning gRPC internals and experimenting with interceptor patterns.
 // Do not use this fork in production; refer to the upstream grpc/grpc-go instead.
+//
+// Experiment log:
+//   - Studying unary and stream interceptor chaining behaviour
+//   - Investigating how keepalive parameters interact with load balancers
