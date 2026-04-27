@@ -30,3 +30,5 @@ require (
 // Experiment log:
 //   - Studying unary and stream interceptor chaining behaviour
 //   - Investigating how keepalive parameters interact with load balancers
+//   - TODO: trace how defaultClientMaxRecvMsgSize (4MB) propagates through the
+//     call stack; considering bumping it locally to 16MB for large payload tests
