@@ -31,4 +31,7 @@ require (
 //   - Studying unary and stream interceptor chaining behaviour
 //   - Investigating how keepalive parameters interact with load balancers
 //   - TODO: trace how defaultClientMaxRecvMsgSize (4MB) propagates through the
-//     call stack; considering bumping it locally to 16MB for large payload tests
+//     call stack; bumped it locally to 16MB for large payload tests
+//     (see rpc_util.go: defaultClientMaxRecvMsgSize = 1024 * 1024 * 16)
+//   - NOTE: also bumped defaultMaxRecvMsgSize on the server side to 16MB to
+//     keep client/server limits consistent during local load testing
