@@ -23,3 +23,6 @@ require (
 	github.com/rogpeppe/go-internal v1.12.0 // indirect
 	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
 )
+
+// Personal fork for learning gRPC internals and experimenting with interceptor patterns.
+// Do not use this fork in production; refer to the upstream grpc/grpc-go instead.
