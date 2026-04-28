@@ -38,3 +38,6 @@ require (
 //   - TODO: look into whether grpc.WithKeepaliveParams on the client side needs
 //     to be tuned when sitting behind an AWS NLB (idle timeout is 350s by default;
 //     considering setting ClientParameters.Time to 300s to avoid silent drops)
+//   - NOTE: confirmed that setting ClientParameters.PermitWithoutStream=true is
+//     necessary to keep the connection alive when there are no active RPCs; without
+//     it the NLB silently drops the connection before the keepalive ping fires
