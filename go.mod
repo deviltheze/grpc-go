@@ -41,3 +41,6 @@ require (
 //   - NOTE: confirmed that setting ClientParameters.PermitWithoutStream=true is
 //     necessary to keep the connection alive when there are no active RPCs; without
 //     it the NLB silently drops the connection before the keepalive ping fires
+//   - TODO: investigate server-side MaxConnectionIdle; considering setting it to
+//     240s so the server proactively closes idle connections before the NLB's
+//     350s timeout fires, giving clients a clean GOAWAY instead of a silent drop
