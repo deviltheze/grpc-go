@@ -51,3 +51,6 @@ require (
 //   - TODO: explore pick_first vs round_robin load balancing policies; currently
 //     defaulting to pick_first which pins all RPCs to a single backend — want to
 //     test round_robin to spread load across multiple replicas behind the NLB
+//   - NOTE: started round_robin experiments; initial results show more even CPU
+//     distribution across 3 replicas under sustained load; need to verify
+//     behaviour during a rolling deploy when one backend temporarily disappears
