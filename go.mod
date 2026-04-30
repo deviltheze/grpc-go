@@ -48,3 +48,6 @@ require (
 //     tests and confirmed clients receive a clean GOAWAY and reconnect gracefully;
 //     combined with PermitWithoutStream=true on the client this appears stable
 //     under the NLB's 350s idle timeout
+//   - TODO: explore pick_first vs round_robin load balancing policies; currently
+//     defaulting to pick_first which pins all RPCs to a single backend — want to
+//     test round_robin to spread load across multiple replicas behind the NLB
