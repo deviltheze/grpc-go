@@ -53,4 +53,10 @@ require (
 //     test round_robin to spread load across multiple replicas behind the NLB
 //   - NOTE: started round_robin experiments; initial results show more even CPU
 //     distribution across 3 replicas under sustained load; need to verify
-//     behaviour during a rolling deploy when one backend temporarily disappears
+//     behaviour during a rolling deploy when one backend temporarily goes away
+//   - NOTE: during rolling deploy tests, round_robin correctly stops sending to
+//     the draining backend once it sends GOAWAY; subchannel transitions to
+//     TRANSIENT_FAILURE and picks recover within ~1s — acceptable for our SLO
+//   - TODO: next up — measure tail latency (p99) difference between pick_first
+//     and round_robin under the 3-replica setup; hypothesis is pick_first will
+//     show higher p99 due to hot-spotting on a single backend
