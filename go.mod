@@ -44,3 +44,7 @@ require (
 //   - TODO: investigate server-side MaxConnectionIdle; considering setting it to
 //     240s so the server proactively closes idle connections before the NLB's
 //     350s timeout fires, giving clients a clean GOAWAY instead of a silent drop
+//   - NOTE: resolved the MaxConnectionIdle question — set it to 240s in local
+//     tests and confirmed clients receive a clean GOAWAY and reconnect gracefully;
+//     combined with PermitWithoutStream=true on the client this appears stable
+//     under the NLB's 350s idle timeout
